@@ -20,12 +20,17 @@ function generatePassword() {
     if (length < 8 || length > 128) {
       return alert('Invalid Length. Must be more than 8 characters, but less than 128.');
     }
-  
 
-  confirm("Click OK to confirm including special characters.");
-  confirm("Click OK to confirm including numeric characters.");
-  confirm("Click OK to confirm including lowercase characters.");
-  confirm("Click OK to confirm including uppercase characters."); 
+    var shouldContainSpecial = confirm("Click OK to confirm including special characters.");
+    var shouldContainNum = confirm("Click OK to confirm including numeric characters.");
+    var shouldContainLower = confirm("Click OK to confirm including lowercase characters.");
+    var shouldContainUpper = confirm("Click OK to confirm including uppercase characters.");
+    if (shouldContainSpecial === false && 
+      shouldContainNum === false && 
+      shouldContainLower === false &&
+      shouldContainUpper === false) {
+        return alert('Must include one character type.');
+      }
 }
 
 // Add event listener to generate button
