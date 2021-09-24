@@ -10,14 +10,22 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  prompt("How many characters would you like your password to contain?");
+  
+  passwordText.value = password;
+  
+}
+
+function generatePassword() {
+  var length = parseInt(prompt("How many characters would you like your password to contain?"));
+    if (length < 8 || length > 128) {
+      return alert('Invalid Length. Must be more than 8 characters, but less than 128.');
+    }
+  
+
   confirm("Click OK to confirm including special characters.");
   confirm("Click OK to confirm including numeric characters.");
   confirm("Click OK to confirm including lowercase characters.");
   confirm("Click OK to confirm including uppercase characters."); 
-
-  passwordText.value = password;
-
 }
 
 // Add event listener to generate button

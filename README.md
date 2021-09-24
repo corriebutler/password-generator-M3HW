@@ -9,9 +9,10 @@ This website is a quick tool designed to generate unique, strong passwords for u
 
 
 ## Link to Site
-https://corriebutler.github.io/portfolio-M2HW/
+https://corriebutler.github.io/password-generator-M3HW/
 
 ## Resources
+Turn String to Integer: https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
 
 
 ## Contact
