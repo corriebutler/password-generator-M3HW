@@ -16,6 +16,7 @@ function writePassword() {
 }
 
 function generatePassword() {
+  var possibleCharacters = [];
   var length = parseInt(prompt("How many characters would you like your password to contain?"));
     if (length < 8 || length > 128) {
       return alert('Invalid Length. Must be more than 8 characters, but less than 128.');
@@ -31,6 +32,19 @@ function generatePassword() {
       shouldContainUpper === false) {
         return alert('Must include one character type.');
       }
+
+    if (shouldContainSpecial) {
+      possibleCharacters = possibleCharacters.concat(specialCharacters);
+    }
+    if (shouldContainNum) {
+      possibleCharacters = possibleCharacters.concat(numeric);
+    }
+    if (shouldContainLower) {
+      possibleCharacters = possibleCharacters.concat(lowerCaseLetters);
+    }
+    if (shouldContainUpper) {
+      possibleCharacters = possibleCharacters.concat(upperCaseLetters);
+    }
 }
 
 // Add event listener to generate button
