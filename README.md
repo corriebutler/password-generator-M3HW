@@ -13,7 +13,11 @@ https://corriebutler.github.io/password-generator-M3HW/
 
 ## Resources
 Turn String to Integer: https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
-
+Math.random() reference used: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+parseInt() reference used: https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
+toString() reference used: https://www.w3schools.com/jsref/jsref_tostring_array.asp
+Push to an Array reference userd: https://www.w3schools.com/jsref/jsref_push.asp
+concat() reference used: https://www.w3schools.com/jsref/jsref_concat_array.asp
 
 ## Contact
 corriebutler12@gmail.com
