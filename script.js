@@ -20,7 +20,7 @@ function generatePassword() {
   var finalPassword = [];
   var length = parseInt(prompt("How many characters would you like your password to contain?"));
     if (length < 8 || length > 128) {
-      return alert('Invalid lenght'); 
+      return alert('Invalid Length. Must be more than 8 characters, but less than 128.'); 
     }
 
   var shouldContainSpecial = confirm("Click OK to confirm including special characters.");
