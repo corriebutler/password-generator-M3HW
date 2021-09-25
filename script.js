@@ -9,42 +9,49 @@ var upperCaseLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N',
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   
   passwordText.value = password;
+  
   
 }
 
 function generatePassword() {
   var possibleCharacters = [];
+  var finalPassword = [];
   var length = parseInt(prompt("How many characters would you like your password to contain?"));
     if (length < 8 || length > 128) {
-      return alert('Invalid Length. Must be more than 8 characters, but less than 128.');
+      return alert('Invalid lenght'); 
     }
 
-    var shouldContainSpecial = confirm("Click OK to confirm including special characters.");
-    var shouldContainNum = confirm("Click OK to confirm including numeric characters.");
-    var shouldContainLower = confirm("Click OK to confirm including lowercase characters.");
-    var shouldContainUpper = confirm("Click OK to confirm including uppercase characters.");
+  var shouldContainSpecial = confirm("Click OK to confirm including special characters.");
+  var shouldContainNum = confirm("Click OK to confirm including numeric characters.");
+  var shouldContainLower = confirm("Click OK to confirm including lowercase characters.");
+  var shouldContainUpper = confirm("Click OK to confirm including uppercase characters.");
     if (shouldContainSpecial === false && 
-      shouldContainNum === false && 
-      shouldContainLower === false &&
-      shouldContainUpper === false) {
-        return alert('Must include one character type.');
-      }
+        shouldContainNum === false && 
+        shouldContainLower === false &&
+        shouldContainUpper === false) {
+          return alert('Must include one character type.');
+        }
 
-    if (shouldContainSpecial) {
-      possibleCharacters = possibleCharacters.concat(specialCharacters);
-    }
-    if (shouldContainNum) {
-      possibleCharacters = possibleCharacters.concat(numeric);
-    }
-    if (shouldContainLower) {
-      possibleCharacters = possibleCharacters.concat(lowerCaseLetters);
-    }
-    if (shouldContainUpper) {
-      possibleCharacters = possibleCharacters.concat(upperCaseLetters);
-    }
+  if (shouldContainSpecial) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+  }
+  if (shouldContainLower) {
+    possibleCharacters = possibleCharacters.concat(lowerCaseLetters);
+  }
+  if (shouldContainUpper) {
+    possibleCharacters = possibleCharacters.concat(upperCaseLetters);
+  }
+  if (shouldContainNum) {
+    possibleCharacters = possibleCharacters.concat(numeric);
+  }
+  for (let i = 0; i < length; i++) {
+    let randomIndex = Math.floor(Math.random() * possibleCharacters.length);
+    let temp = possibleCharacters[randomIndex];
+    finalPassword.push(temp);
+  }
+  return finalPassword.toString();
 }
 
 // Add event listener to generate button
